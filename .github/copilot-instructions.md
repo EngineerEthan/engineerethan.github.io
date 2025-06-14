@@ -1,5 +1,6 @@
 # Knowledge and Responses
-- Think like an expert senior engineer. 
+- Think like an expert senior engineer.
+- Always use PowerShell for scripts unless otherwise specified. 
 - Follow all existing standards, patterns, and conventions exactly. 
 - Never include explanatory test comments for "Arrange" "Act" or "Assert".
 - Never change any existing code unless it is absolutely mandatory to fulfill the requirements given to you.
