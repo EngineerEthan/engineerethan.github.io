@@ -2,43 +2,73 @@ import {
   CodeBracketIcon,
   HeartIcon,
   LightBulbIcon,
+  ClockIcon,
+  CubeIcon,
+  CogIcon,
+  UserGroupIcon,
   RocketLaunchIcon,
 } from '@heroicons/react/24/outline'
 import { memo } from 'react'
 
+interface SkillGroup {
+  category: string
+  technologies: string[]
+}
+
+interface Value {
+  icon: typeof CodeBracketIcon
+  title: string
+  description: string
+}
+
 const About = memo(() => {
-  const skills = [
-    {
-      category: 'Frontend',
-      technologies: ['React', 'Vue.js', 'TypeScript', 'Tailwind CSS', 'Next.js'],
-    },
-    {
-      category: 'Backend',
-      technologies: ['Node.js', 'Python', 'Express', 'FastAPI', 'PostgreSQL'],
-    },
-    { category: 'Tools & Other', technologies: ['Git', 'Docker', 'AWS', 'Vite', 'Jest'] },
+  const skills: SkillGroup[] = [
+    { category: 'Frontend', technologies: ['React', 'Flutter', 'TypeScript', 'Tailwind CSS', 'Angular'] },
+    { category: 'Backend', technologies: ['Node.js', 'C# .NET', 'PostgreSQL', 'DynamoDB', 'Golang'] },
+    { category: 'Cloud', technologies: ['AWS', 'Azure', 'AWS CDK', 'Hashicorp Terraform', 'Azure DevOps'] },
+    { category: 'Tools & Other', technologies: ['VS Code & Visual Studio', 'Docker', 'Claude Code', 'Cursor', 'GitHub Copilot'] },
   ]
 
-  const values = [
+  const values: Value[] = [
+    {
+      icon: ClockIcon,
+      title: 'Pragmatic Efficiency',
+      description: `Perfection is the enemy of excellence. "Good" & shipped is better than "great" & behind schedule. Good intentions won't bring back missed opportunities.`,
+    },
+    {
+      icon: CubeIcon,
+      title: 'Practical Minimalism',
+      description: `Stay light on your feet; decisive agility is how you win. Don't overdesign, and only add as much bureaucracy as necessary to maximize velocity.`,
+    },
     {
       icon: CodeBracketIcon,
       title: 'Clean Code',
-      description: 'I believe in writing maintainable, readable code that stands the test of time.',
+      description: `Code must be readable and intentionally organized. It doesn't matter how fast we build things if we can't maintain them.`,
+    },
+    {
+      icon: CogIcon,
+      title: 'Automation',
+      description: 'Everyone has access to a robot army right at their fingertips. Use it. Basic DevOps automation is an essential skillset for all modern engineers.',
     },
     {
       icon: RocketLaunchIcon,
-      title: 'Performance',
-      description: 'Building fast, efficient applications that provide excellent user experiences.',
+      title: 'Performance & UX',
+      description: `Apps must be genuinely pleasant to use. There's no replacement for word-of-mouth recommendations and long-term loyalty.`,
     },
     {
       icon: LightBulbIcon,
       title: 'Innovation',
-      description: 'Always exploring new technologies and finding creative solutions to problems.',
+      description: `Explore unconventional solutions to niche problems. If "the way this is done" doesn't work, then change "the way this is done".`,
     },
     {
       icon: HeartIcon,
       title: 'User-Centric',
-      description: 'Putting user needs first and creating intuitive, accessible interfaces.',
+      description: 'Everything we do must serve our users. Always design an intuitive, accessible UX. Never release anything for which you feel shame or regret.',
+    },
+    {
+      icon: UserGroupIcon,
+      title: 'The Right People',
+      description: 'Hire driven, skilled, stable producers that you can trust. There is no room for anyone else.',
     },
   ]
 
@@ -48,8 +78,8 @@ const About = memo(() => {
         <div className="text-center mb-16 animate-teleport-in-1">
           <h2 className="text-3xl font-bold text-white sm:text-4xl mb-4">About Me</h2>
           <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-            I'm a passionate software engineer with a love for creating digital experiences that
-            make a difference. Here's a bit more about what drives me and what I work with.
+            I'm a driven & ambitious software engineer who loves to help people. Technology transforms the 
+            world for the better, when we aren't using it to destroy ourselves.
           </p>
         </div>
 
@@ -59,18 +89,18 @@ const About = memo(() => {
             <h3 className="text-2xl font-bold text-white mb-6">My Journey</h3>
             <div className="prose prose-invert max-w-none">
               <p className="text-gray-300 mb-4">
-                I've been fascinated by technology and problem-solving since I was young. What
-                started as curiosity about how websites work has evolved into a career focused on
-                building meaningful software solutions.
+                As a tinkerer at heart, I spent most of my childhood taking things apart to see how they worked. 
+                When I got my first computer things were no different; I eventually fried the motherboard by force-overclocking a chip that wasn't designed for it.  
+                I'm always curious and dabbling in new things, so I drifted through several majors in college before finally settling on software engineering. 
               </p>
               <p className="text-gray-300 mb-4">
-                I enjoy the entire development process - from understanding user needs and designing
-                elegant solutions to implementing robust code and optimizing performance. There's
-                something magical about turning ideas into working software.
+                As a professional, I have built my career on moving quickly & being flexible. 
+                I enjoy the entire development process - from understanding user needs and 
+                designing elegant solutions to implementing robust code and optimizing performance. 
+                There's something magical & addicting about interpreting ideas into working software. 
               </p>
               <p className="text-gray-300">
-                When I'm not coding, you can find me exploring new technologies, contributing to
-                open source projects, or sharing knowledge with the developer community.
+                When I'm not coding, you can find me spending time with my family, exploring new technologies (mostly via private side projects), dabbling in outdoor hobbies, reading, listening to podcasts, or planning "life".   
               </p>
             </div>
           </div>

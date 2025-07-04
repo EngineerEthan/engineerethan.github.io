@@ -8,6 +8,13 @@ import {
 import { type ChangeEvent, type FormEvent, memo, useState } from 'react'
 import { GithubIcon, LinkedinIcon, TwitterIcon } from './icons/SocialIcons'
 
+interface SocialLink {
+  name: string
+  url: string
+  icon: typeof GithubIcon
+  color: string
+}
+
 const Contact = memo(() => {
   const [formData, setFormData] = useState<ContactFormData>({
     name: '',
@@ -50,7 +57,7 @@ const Contact = memo(() => {
     }
   }
 
-  const socialLinks = [
+  const socialLinks: SocialLink[] = [
     {
       name: 'GitHub',
       url: 'https://github.com/EngineerEthan',
