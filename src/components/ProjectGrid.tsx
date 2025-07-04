@@ -14,10 +14,10 @@ const ProjectGrid = memo(() => {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold text-white sm:text-4xl mb-4">
-            Featured Projects
+            Featured Projects (WIP)
           </h2>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-            Here are some of the projects I've worked on. Each one represents a unique challenge 
+            Here are some of the projects I've worked on. Each one represented a unique challenge 
             and an opportunity to learn something new.
           </p>
         </div>

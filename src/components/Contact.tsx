@@ -114,6 +114,7 @@ function Contact() {
                 <div className="flex-shrink-0">
                   <EnvelopeIcon className="h-6 w-6 text-primary-400" />
                 </div>
+                {  /* (TODO: Ethan - convert this to LinkedIn) */}
                 <div>
                   <h4 className="text-lg font-medium text-white">Email</h4>
                   <a 
@@ -131,7 +132,7 @@ function Contact() {
                 </div>
                 <div>
                   <h4 className="text-lg font-medium text-white">Location</h4>
-                  <p className="text-gray-300">Available for remote work worldwide</p>
+                  <p className="text-gray-300">Available for remote work (USA timezones preferred)</p>
                 </div>
               </div>
             </div>
