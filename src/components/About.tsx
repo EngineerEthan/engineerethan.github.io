@@ -5,14 +5,25 @@ import {
   HeartIcon 
 } from '@heroicons/react/24/outline'
 
+interface SkillGroup {
+  category: string
+  technologies: string[]
+}
+
+interface Value {
+  icon: typeof CodeBracketIcon
+  title: string
+  description: string
+}
+
 function About() {
-  const skills = [
+  const skills: SkillGroup[] = [
     { category: 'Frontend', technologies: ['React', 'Vue.js', 'TypeScript', 'Tailwind CSS', 'Next.js'] },
     { category: 'Backend', technologies: ['Node.js', 'Python', 'Express', 'FastAPI', 'PostgreSQL'] },
     { category: 'Tools & Other', technologies: ['Git', 'Docker', 'AWS', 'Vite', 'Jest'] },
   ]
 
-  const values = [
+  const values: Value[] = [
     {
       icon: CodeBracketIcon,
       title: 'Clean Code',

@@ -47,18 +47,12 @@ const ProjectTile = memo<ProjectTileProps>(({ project, isLarge = false }) => {
         "absolute inset-0 bg-gradient-to-br from-primary-900/20 to-accent-900/20",
         isLarge ? "h-96" : "h-64"
       )}>
-        {!imageError ? (
-          <img
-            src={project.imageUrl}
-            alt={`${project.title} screenshot`}
-            className="h-full w-full object-cover opacity-60 group-hover:opacity-40 transition-opacity duration-300"
-            onError={handleImageError}
-          />
-        ) : (
-          <div className="h-full w-full flex items-center justify-center bg-gray-700">
-            <CodeBracketIcon className="h-16 w-16 text-gray-500" aria-hidden="true" />
-          </div>
-        )}
+        <img
+          src={imageError ? '/projects/default-fallback.jpg' : project.imageUrl}
+          alt={`${project.title} screenshot`}
+          className="h-full w-full object-cover opacity-60 group-hover:opacity-40 transition-opacity duration-300"
+          onError={handleImageError}
+        />
       </div>
 
       {/* Content Overlay */}

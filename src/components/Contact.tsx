@@ -3,25 +3,42 @@ import {
   EnvelopeIcon, 
   MapPinIcon,
   CheckCircleIcon,
-  ExclamationCircleIcon
+  ExclamationCircleIcon,
+  CodeBracketIcon,
+  UserIcon,
+  ChatBubbleLeftRightIcon
 } from '@heroicons/react/24/outline'
-import { 
-  GithubIcon, 
-  LinkedinIcon, 
-  TwitterIcon 
-} from './icons/SocialIcons'
+
+interface FormData {
+  name: string
+  email: string
+  subject: string
+  message: string
+}
+
+interface Status {
+  type: 'success' | 'error' | ''
+  message: string
+}
+
+interface SocialLink {
+  name: string
+  url: string
+  icon: typeof CodeBracketIcon
+  color: string
+}
 
 function Contact() {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
     subject: '',
     message: ''
   })
-  const [status, setStatus] = useState({ type: '', message: '' })
+  const [status, setStatus] = useState<Status>({ type: '', message: '' })
   const [isSubmitting, setIsSubmitting] = useState(false)
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
     setFormData(prev => ({
       ...prev,
@@ -29,7 +46,7 @@ function Contact() {
     }))
   }
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
     
@@ -53,23 +70,23 @@ function Contact() {
     }
   }
 
-  const socialLinks = [
+  const socialLinks: SocialLink[] = [
     {
       name: 'GitHub',
       url: 'https://github.com/EngineerEthan',
-      icon: GithubIcon,
+      icon: CodeBracketIcon,
       color: 'hover:text-gray-300'
     },
     {
       name: 'LinkedIn',
       url: 'https://linkedin.com/in/your-profile',
-      icon: LinkedinIcon,
+      icon: UserIcon,
       color: 'hover:text-blue-400'
     },
     {
       name: 'Twitter',
       url: 'https://twitter.com/your-handle',
-      icon: TwitterIcon,
+      icon: ChatBubbleLeftRightIcon,
       color: 'hover:text-blue-300'
     }
   ]
