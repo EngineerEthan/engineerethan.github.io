@@ -52,6 +52,7 @@ Based on the Copilot instructions and existing code patterns:
 - **Think like a senior engineer** - maintain high code quality standards
 - **Format code identically** to other code in the same directory
 - **Commit messages** - use Commitizen conventional commit format: `type(scope): description`
+- **String quotes** - use template literals (backticks) for user-facing strings, especially those with apostrophes
 
 ## Component Architecture
 
