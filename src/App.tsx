@@ -2,6 +2,8 @@ import { Suspense, lazy } from 'react'
 import ErrorBoundary from './components/ErrorBoundary'
 import Layout from './components/Layout'
 import Hero from './components/Hero'
+import About from './components/About'
+import Contact from './components/Contact'
 import './App.css'
 
 // Lazy load components for better performance
@@ -19,6 +21,8 @@ function App() {
         }>
           <ProjectGrid />
         </Suspense>
+        <About />
+        <Contact />
       </Layout>
     </ErrorBoundary>
   )
