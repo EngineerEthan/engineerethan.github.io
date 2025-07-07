@@ -1,5 +1,5 @@
-import { Component, type ReactNode, type ErrorInfo } from 'react'
 import { ExclamationTriangleIcon } from '@heroicons/react/24/outline'
+import { Component, type ErrorInfo, type ReactNode } from 'react'
 
 interface ErrorBoundaryProps {
   children: ReactNode
@@ -37,13 +37,13 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
             <div className="mx-auto h-24 w-24 text-red-400 mb-6">
               <ExclamationTriangleIcon className="h-full w-full" />
             </div>
-            <h1 className="text-2xl font-bold text-white mb-4">
-              Oops! Something went wrong
-            </h1>
+            <h1 className="text-2xl font-bold text-white mb-4">Oops! Something went wrong</h1>
             <p className="text-gray-300 mb-8 max-w-md">
-              An error occurred while loading this page. This has been logged and we'll look into it.
-            </p>
+              An error occurred while loading this page. This has been logged and we'll look into
+              it.
+            </p>{' '}
             <button
+              type="button"
               onClick={() => window.location.reload()}
               className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-primary-600 hover:bg-primary-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-gray-900"
             >

@@ -6,11 +6,11 @@ import { useLocalStorage } from './useLocalStorage'
  */
 export function useVisitorStatus(): boolean {
   const [hasVisited, setHasVisited] = useLocalStorage('hasVisited', false)
-  
+
   // Mark as visited if this is the first time
   if (!hasVisited) {
     setHasVisited(true)
   }
-  
+
   return hasVisited
 }

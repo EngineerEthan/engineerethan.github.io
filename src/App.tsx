@@ -1,28 +1,39 @@
 import { Suspense, lazy } from 'react'
 import ErrorBoundary from './components/ErrorBoundary'
-import Layout from './components/Layout'
 import Hero from './components/Hero'
-import About from './components/About'
-import Contact from './components/Contact'
+import Layout from './components/Layout'
+import { useFeatureFlags } from './hooks/useFeatureFlags'
 import './App.css'
 
 // Lazy load components for better performance
 const ProjectGrid = lazy(() => import('./components/ProjectGrid'))
+const About = lazy(() => import('./components/About'))
+const Contact = lazy(() => import('./components/Contact'))
+
+const LoadingSpinner = () => (
+  <div className="flex items-center justify-center py-24">
+    <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-400" />
+  </div>
+)
 
 function App() {
+  const { showProjects } = useFeatureFlags()
+
   return (
     <ErrorBoundary>
       <Layout>
         <Hero />
-        <Suspense fallback={
-          <div className="flex items-center justify-center py-24">
-            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-400" />
-          </div>
-        }>
-          <ProjectGrid />
+        {showProjects && (
+          <Suspense fallback={<LoadingSpinner />}>
+            <ProjectGrid />
+          </Suspense>
+        )}
+        <Suspense fallback={<LoadingSpinner />}>
+          <About />
         </Suspense>
-        <About />
-        <Contact />
+        <Suspense fallback={<LoadingSpinner />}>
+          <Contact />
+        </Suspense>
       </Layout>
     </ErrorBoundary>
   )

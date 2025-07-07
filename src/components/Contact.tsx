@@ -1,69 +1,56 @@
-import { useState } from 'react'
-import { 
-  EnvelopeIcon, 
-  MapPinIcon,
+import type { ContactFormData, StatusMessage } from '@/types'
+import {
   CheckCircleIcon,
+  EnvelopeIcon,
   ExclamationCircleIcon,
-  CodeBracketIcon,
-  UserIcon,
-  ChatBubbleLeftRightIcon
+  MapPinIcon,
 } from '@heroicons/react/24/outline'
-
-interface FormData {
-  name: string
-  email: string
-  subject: string
-  message: string
-}
-
-interface Status {
-  type: 'success' | 'error' | ''
-  message: string
-}
+import { type ChangeEvent, type FormEvent, memo, useState } from 'react'
+import { GithubIcon, LinkedinIcon, TwitterIcon } from './icons/SocialIcons'
 
 interface SocialLink {
   name: string
   url: string
-  icon: typeof CodeBracketIcon
+  icon: typeof GithubIcon
   color: string
 }
 
-function Contact() {
-  const [formData, setFormData] = useState<FormData>({
+const Contact = memo(() => {
+  const [formData, setFormData] = useState<ContactFormData>({
     name: '',
     email: '',
     subject: '',
-    message: ''
+    message: '',
   })
-  const [status, setStatus] = useState<Status>({ type: '', message: '' })
+  const [status, setStatus] = useState<StatusMessage>({ type: '', message: '' })
   const [isSubmitting, setIsSubmitting] = useState(false)
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
     setFormData(prev => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }))
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSubmitting(true)
-    
+
     // Simulate form submission - replace with actual form handling
     try {
       // This is where you'd integrate with a form service like Netlify Forms, Formspree, etc.
       await new Promise(resolve => setTimeout(resolve, 1000))
-      
+
       setStatus({
         type: 'success',
-        message: 'Thanks for your message! I\'ll get back to you soon.'
+        message: "Thanks for your message! I'll get back to you soon.",
       })
       setFormData({ name: '', email: '', subject: '', message: '' })
     } catch {
       setStatus({
         type: 'error',
-        message: 'Something went wrong. Please try again or reach out directly via email.'
+        message: 'Something went wrong. Please try again or reach out directly via email.',
       })
     } finally {
       setIsSubmitting(false)
@@ -74,41 +61,39 @@ function Contact() {
     {
       name: 'GitHub',
       url: 'https://github.com/EngineerEthan',
-      icon: CodeBracketIcon,
-      color: 'hover:text-gray-300'
+      icon: GithubIcon,
+      color: 'hover:text-gray-300',
     },
     {
       name: 'LinkedIn',
       url: 'https://linkedin.com/in/your-profile',
-      icon: UserIcon,
-      color: 'hover:text-blue-400'
+      icon: LinkedinIcon,
+      color: 'hover:text-blue-400',
     },
     {
       name: 'Twitter',
       url: 'https://twitter.com/your-handle',
-      icon: ChatBubbleLeftRightIcon,
-      color: 'hover:text-blue-300'
-    }
+      icon: TwitterIcon,
+      color: 'hover:text-blue-300',
+    },
   ]
 
   return (
     <section id="contact" className="relative py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-white sm:text-4xl mb-4">
-            Get In Touch
-          </h2>
+        <div className="text-center mb-16 animate-teleport-in-1">
+          <h2 className="text-3xl font-bold text-white sm:text-4xl mb-4">Get In Touch</h2>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-            Have a project in mind or just want to chat about technology? 
-            I'd love to hear from you. Let's build something amazing together.
+            Have a project in mind or just want to chat about technology? I'd love to hear from you.
+            Let's build something amazing together.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Contact Information */}
-          <div>
+          <div className="animate-teleport-in-2">
             <h3 className="text-2xl font-bold text-white mb-8">Let's Connect</h3>
-            
+
             <div className="space-y-6 mb-8">
               <div className="flex items-start space-x-4">
                 <div className="flex-shrink-0">
@@ -117,7 +102,7 @@ function Contact() {
                 {  /* (TODO: Ethan - convert this to LinkedIn) */}
                 <div>
                   <h4 className="text-lg font-medium text-white">Email</h4>
-                  <a 
+                  <a
                     href="mailto:your.email@example.com"
                     className="text-gray-300 hover:text-primary-400 transition-colors duration-200"
                   >
@@ -141,7 +126,7 @@ function Contact() {
             <div>
               <h4 className="text-lg font-medium text-white mb-4">Follow Me</h4>
               <div className="flex space-x-4">
-                {socialLinks.map((social) => {
+                {socialLinks.map(social => {
                   const IconComponent = social.icon
                   return (
                     <a
@@ -161,7 +146,7 @@ function Contact() {
           </div>
 
           {/* Contact Form */}
-          <div>
+          <div className="animate-teleport-in-3">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
@@ -230,11 +215,13 @@ function Contact() {
 
               {/* Status Message */}
               {status.message && (
-                <div className={`flex items-center space-x-2 p-4 rounded-lg ${
-                  status.type === 'success' 
-                    ? 'bg-green-900/30 text-green-300 border border-green-700/50' 
-                    : 'bg-red-900/30 text-red-300 border border-red-700/50'
-                }`}>
+                <div
+                  className={`flex items-center space-x-2 p-4 rounded-lg ${
+                    status.type === 'success'
+                      ? 'bg-green-900/30 text-green-300 border border-green-700/50'
+                      : 'bg-red-900/30 text-red-300 border border-red-700/50'
+                  }`}
+                >
                   {status.type === 'success' ? (
                     <CheckCircleIcon className="h-5 w-5 flex-shrink-0" />
                   ) : (
@@ -257,6 +244,8 @@ function Contact() {
       </div>
     </section>
   )
-}
+})
+
+Contact.displayName = 'Contact'
 
 export default Contact
