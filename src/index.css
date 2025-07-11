@@ -133,6 +133,9 @@ html {
     opacity: 1;
     transform: scale(1);
     filter: blur(0px);
+    /* Safari blur fix */
+    -webkit-filter: blur(0px);
+    will-change: auto;
   }
 }
 

@@ -86,7 +86,7 @@ const Layout = memo<LayoutProps>(({ children }) => {
       <footer className="relative z-10 border-t border-gray-800 py-6">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center text-sm text-gray-400">
-            <p>&copy; 2025 Ethan. Built with React & Vite. Portfolio v2.0</p>
+            <p>&copy; 2025 Ethan. Built with React & Vite. Assisted by Claude.</p>
           </div>
         </div>
       </footer>

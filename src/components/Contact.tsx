@@ -66,13 +66,13 @@ const Contact = memo(() => {
     },
     {
       name: 'LinkedIn',
-      url: 'https://linkedin.com/in/your-profile',
+      url: 'https://www.linkedin.com/in/ethan-w-benson/',
       icon: LinkedinIcon,
       color: 'hover:text-blue-400',
     },
     {
-      name: 'Twitter',
-      url: 'https://twitter.com/your-handle',
+      name: 'X',
+      url: 'https://x.com/engineerethan',
       icon: TwitterIcon,
       color: 'hover:text-blue-300',
     },
@@ -95,22 +95,6 @@ const Contact = memo(() => {
             <h3 className="text-2xl font-bold text-white mb-8">Let's Connect</h3>
 
             <div className="space-y-6 mb-8">
-              <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0">
-                  <EnvelopeIcon className="h-6 w-6 text-primary-400" />
-                </div>
-                {  /* (TODO: Ethan - convert this to LinkedIn) */}
-                <div>
-                  <h4 className="text-lg font-medium text-white">Email</h4>
-                  <a
-                    href="mailto:your.email@example.com"
-                    className="text-gray-300 hover:text-primary-400 transition-colors duration-200"
-                  >
-                    your.email@example.com
-                  </a>
-                </div>
-              </div>
-
               <div className="flex items-start space-x-4">
                 <div className="flex-shrink-0">
                   <MapPinIcon className="h-6 w-6 text-primary-400" />

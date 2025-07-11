@@ -26,7 +26,7 @@ const About = memo(() => {
     { category: 'Frontend', technologies: ['React', 'Flutter', 'TypeScript', 'Tailwind CSS', 'Angular'] },
     { category: 'Backend', technologies: ['Node.js', 'C# .NET', 'PostgreSQL', 'DynamoDB', 'Golang'] },
     { category: 'Cloud', technologies: ['AWS', 'Azure', 'AWS CDK', 'Hashicorp Terraform', 'Azure DevOps'] },
-    { category: 'Tools & Other', technologies: ['VS Code & Visual Studio', 'Docker', 'Claude Code', 'Cursor', 'GitHub Copilot'] },
+    { category: 'Tools & Other', technologies: ['VS Code & VS 2022', 'Docker', 'Claude Code', 'Cursor', 'GitHub Copilot'] },
   ]
 
   const values: Value[] = [
@@ -38,7 +38,7 @@ const About = memo(() => {
     {
       icon: CubeIcon,
       title: 'Practical Minimalism',
-      description: `Stay light on your feet; decisive agility is how you win. Don't overdesign, and only add as much bureaucracy as necessary to maximize velocity.`,
+      description: `Stay light on your feet; decisive agility is how you win. Prefer minimalism, and only add bureaucracy when it increases quality or velocity.`,
     },
     {
       icon: CodeBracketIcon,
@@ -48,7 +48,7 @@ const About = memo(() => {
     {
       icon: CogIcon,
       title: 'Automation',
-      description: 'Everyone has access to a robot army right at their fingertips. Use it. Basic DevOps automation is an essential skillset for all modern engineers.',
+      description: 'Everyone has access to a robot army right at their fingertips. Use it. Basic DevOps automation and AI coding is an essential skillset for all engineers.',
     },
     {
       icon: RocketLaunchIcon,
@@ -58,12 +58,12 @@ const About = memo(() => {
     {
       icon: LightBulbIcon,
       title: 'Innovation',
-      description: `Explore unconventional solutions to niche problems. If "the way this is done" doesn't work, then change "the way this is done".`,
+      description: `Explore unconventional solutions to niche problems. If "the way things are done" don't work, then let's change "the way things are done".`,
     },
     {
       icon: HeartIcon,
       title: 'User-Centric',
-      description: 'Everything we do must serve our users. Always design an intuitive, accessible UX. Never release anything for which you feel shame or regret.',
+      description: `Everything we do must serve our users. Always design an intuitive, accessible UX. Only release things you're proud of.`,
     },
     {
       icon: UserGroupIcon,
