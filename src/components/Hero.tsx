@@ -1,6 +1,6 @@
-import { useVisitorStatus } from '@/hooks/useVisitorStatus'
 import { useFeatureFlags } from '@/hooks/useFeatureFlags'
 import { usePageTransition } from '@/hooks/usePageTransition'
+import { useVisitorStatus } from '@/hooks/useVisitorStatus'
 import { RocketLaunchIcon } from '@heroicons/react/24/solid'
 import { memo, useEffect } from 'react'
 
@@ -67,10 +67,10 @@ const Hero = memo(() => {
             This is the age of the technologist.
           </p>
 
-            <p className="text-lg text-gray-400 mb-8 max-w-3xl w-full animate-teleport-in-4">
-            We thrive in ambiguity, controlling the chaos to transform high-stakes ideas into simple, actionable products. Check out what I've
-            been up to lately.
-            </p>
+          <p className="text-lg text-gray-400 mb-8 max-w-3xl w-full animate-teleport-in-4">
+            We thrive in ambiguity, controlling the chaos to transform high-stakes ideas into
+            simple, actionable products. Check out what I've been up to lately.
+          </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center w-full animate-teleport-in-5">
             {showProjects && (

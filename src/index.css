@@ -8,77 +8,63 @@
 
 /* Pixelation OUT effect - dissolving current content */
 .pixelation-out-overlay {
-  background: 
-    linear-gradient(90deg, transparent 50%, rgba(17, 24, 39, 0.8) 50%),
+  background: linear-gradient(90deg, transparent 50%, rgba(17, 24, 39, 0.8) 50%),
     linear-gradient(rgba(17, 24, 39, 0.8) 50%, transparent 50%);
   background-size: 4px 4px;
-  animation: pixelate-out 600ms ease-in-out forwards;
-  backdrop-filter: blur(0px);
+  animation: pixelate-out 300ms ease-in-out forwards;
 }
 
 @keyframes pixelate-out {
   0% {
     background-size: 0px 0px;
     opacity: 0;
-    backdrop-filter: blur(0px);
   }
   25% {
     background-size: 2px 2px;
     opacity: 0.3;
-    backdrop-filter: blur(1px);
   }
   50% {
     background-size: 8px 8px;
     opacity: 0.7;
-    backdrop-filter: blur(2px);
   }
   75% {
     background-size: 12px 12px;
     opacity: 0.9;
-    backdrop-filter: blur(4px);
   }
   100% {
     background-size: 16px 16px;
     opacity: 1;
-    backdrop-filter: blur(6px);
   }
 }
 
 /* Pixelation IN effect - materializing new content (true reverse of OUT) */
 .pixelation-in-overlay {
-  background: 
-    linear-gradient(90deg, transparent 50%, rgba(17, 24, 39, 0.8) 50%),
+  background: linear-gradient(90deg, transparent 50%, rgba(17, 24, 39, 0.8) 50%),
     linear-gradient(rgba(17, 24, 39, 0.8) 50%, transparent 50%);
   background-size: 16px 16px;
-  animation: pixelate-in 600ms ease-out forwards;
-  backdrop-filter: blur(6px);
+  animation: pixelate-in 300ms ease-out forwards;
 }
 
 @keyframes pixelate-in {
   0% {
     background-size: 16px 16px;
     opacity: 1;
-    backdrop-filter: blur(6px);
   }
   25% {
     background-size: 12px 12px;
     opacity: 0.9;
-    backdrop-filter: blur(4px);
   }
   50% {
     background-size: 8px 8px;
     opacity: 0.7;
-    backdrop-filter: blur(2px);
   }
   75% {
     background-size: 2px 2px;
     opacity: 0.3;
-    backdrop-filter: blur(1px);
   }
   100% {
     background-size: 0px 0px;
     opacity: 0;
-    backdrop-filter: blur(0px);
   }
 }
 

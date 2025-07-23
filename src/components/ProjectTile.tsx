@@ -6,27 +6,30 @@ import { memo, useCallback, useState } from 'react'
 interface ProjectTileProps {
   project: Project
   isLarge?: boolean
+  onTileClick?: () => void
 }
 
-const ProjectTile = memo<ProjectTileProps>(({ project, isLarge = false }) => {
+const ProjectTile = memo<ProjectTileProps>(({ project, isLarge = false, onTileClick }) => {
   const [imageError, setImageError] = useState(false)
 
   const handleImageError = useCallback(() => {
     setImageError(true)
   }, [])
 
-  const handleProjectClick = useCallback(() => {
-    if (project.liveUrl) {
-      window.open(project.liveUrl, '_blank', 'noopener,noreferrer')
+  const handleTileClick = useCallback(() => {
+    if (onTileClick) {
+      onTileClick()
     }
-  }, [project.liveUrl])
+  }, [onTileClick])
 
-  const handleGithubClick = useCallback(
+  const handleLiveDemoClick = useCallback(
     (e: React.MouseEvent) => {
-      e.stopPropagation()
-      window.open(project.githubUrl, '_blank', 'noopener,noreferrer')
+      e.stopPropagation() // Prevent tile click when clicking Live Demo
+      if (project.liveUrl) {
+        window.open(project.liveUrl, '_blank', 'noopener,noreferrer')
+      }
     },
-    [project.githubUrl]
+    [project.liveUrl]
   )
 
   const maxTechCount = isLarge ? 6 : 3
@@ -38,16 +41,16 @@ const ProjectTile = memo<ProjectTileProps>(({ project, isLarge = false }) => {
       type="button"
       className={classNames(
         'group relative overflow-hidden rounded-xl bg-gray-800 shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-105 cursor-pointer w-full text-left',
-        isLarge ? 'col-span-2 row-span-2' : 'col-span-1 row-span-1'
+        isLarge ? 'md:col-span-2 md:row-span-2' : 'col-span-1 row-span-1'
       )}
-      onClick={handleProjectClick}
-      aria-label={`View ${project.title} project`}
+      onClick={handleTileClick}
+      aria-label={`Select ${project.title} project`}
     >
       {/* Background Image or Placeholder */}
       <div
         className={classNames(
           'absolute inset-0 bg-gradient-to-br from-primary-900/20 to-accent-900/20',
-          isLarge ? 'h-96' : 'h-64'
+          isLarge ? 'h-80 md:h-96' : 'h-64'
         )}
       >
         {!imageError ? (
@@ -108,23 +111,14 @@ const ProjectTile = memo<ProjectTileProps>(({ project, isLarge = false }) => {
             {project.liveUrl && (
               <button
                 type="button"
-                onClick={handleProjectClick}
+                onClick={handleLiveDemoClick}
                 className="flex items-center gap-1 px-3 py-1.5 text-xs font-medium text-white bg-primary-600 hover:bg-primary-700 rounded transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-gray-900"
                 aria-label={`View live demo of ${project.title}`}
               >
                 <ArrowTopRightOnSquareIcon className="h-3 w-3" aria-hidden="true" />
-                Live Demo
+                Live
               </button>
-            )}{' '}
-            <button
-              type="button"
-              onClick={handleGithubClick}
-              className="flex items-center gap-1 px-3 py-1.5 text-xs font-medium text-gray-300 bg-gray-700 hover:bg-gray-600 rounded transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:ring-offset-gray-900"
-              aria-label={`View source code for ${project.title} on GitHub`}
-            >
-              <CodeBracketIcon className="h-3 w-3" aria-hidden="true" />
-              Code
-            </button>
+            )}
           </div>
         </div>{' '}
       </div>

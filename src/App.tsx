@@ -23,14 +23,14 @@ function App() {
     <ErrorBoundary>
       <Layout>
         <Hero />
+        <Suspense fallback={<LoadingSpinner />}>
+          <About />
+        </Suspense>
         {showProjects && (
           <Suspense fallback={<LoadingSpinner />}>
             <ProjectGrid />
           </Suspense>
         )}
-        <Suspense fallback={<LoadingSpinner />}>
-          <About />
-        </Suspense>
         <Suspense fallback={<LoadingSpinner />}>
           <Contact />
         </Suspense>

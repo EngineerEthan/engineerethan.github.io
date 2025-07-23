@@ -1,12 +1,9 @@
 import {
-  CodeBracketIcon,
-  HeartIcon,
-  LightBulbIcon,
   ClockIcon,
-  CubeIcon,
-  CogIcon,
-  UserGroupIcon,
+  CodeBracketIcon,
+  LightBulbIcon,
   RocketLaunchIcon,
+  UserGroupIcon,
 } from '@heroicons/react/24/outline'
 import { memo } from 'react'
 
@@ -23,32 +20,31 @@ interface Value {
 
 const About = memo(() => {
   const skills: SkillGroup[] = [
-    { category: 'Frontend', technologies: ['React', 'Flutter', 'TypeScript', 'Tailwind CSS', 'Angular'] },
-    { category: 'Backend', technologies: ['Node.js', 'C# .NET', 'PostgreSQL', 'DynamoDB', 'Golang'] },
-    { category: 'Cloud', technologies: ['AWS', 'Azure', 'AWS CDK', 'Hashicorp Terraform', 'Azure DevOps'] },
-    { category: 'Tools & Other', technologies: ['VS Code & VS 2022', 'Docker', 'Claude Code', 'Cursor', 'GitHub Copilot'] },
+    {
+      category: 'Frontend',
+      technologies: ['React', 'Flutter', 'TypeScript', 'Tailwind CSS', 'Angular'],
+    },
+    { category: 'Backend', technologies: ['Node.js', 'C# .NET', 'PostgreSQL', 'DynamoDB', 'Go'] },
+    {
+      category: 'Cloud',
+      technologies: ['AWS Lambda', 'Azure Functions', 'AWS CDK', 'Terraform', 'Docker'],
+    },
+    {
+      category: 'Data & Caching',
+      technologies: ['Kafka', 'Redis', 'Scala', 'AWS DMS', 'Service Bus'],
+    },
   ]
 
   const values: Value[] = [
     {
       icon: ClockIcon,
-      title: 'Pragmatic Efficiency',
-      description: `Perfection is the enemy of excellence. "Good" & shipped is better than "great" & behind schedule. Good intentions won't bring back missed opportunities.`,
-    },
-    {
-      icon: CubeIcon,
       title: 'Practical Minimalism',
-      description: `Stay light on your feet; decisive agility is how you win. Prefer minimalism, and only add bureaucracy when it increases quality or velocity.`,
+      description: `Perfection is the enemy of excellence. "Good" & shipped is better than "great" & behind schedule. Good intentions won't bring back missed opportunities.`,
     },
     {
       icon: CodeBracketIcon,
       title: 'Clean Code',
       description: `Code must be readable and intentionally organized. It doesn't matter how fast we build things if we can't maintain them.`,
-    },
-    {
-      icon: CogIcon,
-      title: 'Automation',
-      description: 'Everyone has access to a robot army right at their fingertips. Use it. Basic DevOps automation and AI coding is an essential skillset for all engineers.',
     },
     {
       icon: RocketLaunchIcon,
@@ -61,14 +57,10 @@ const About = memo(() => {
       description: `Explore unconventional solutions to niche problems. If "the way things are done" don't work, then let's change "the way things are done".`,
     },
     {
-      icon: HeartIcon,
-      title: 'User-Centric',
-      description: `Everything we do must serve our users. Always design an intuitive, accessible UX. Only release things you're proud of.`,
-    },
-    {
       icon: UserGroupIcon,
       title: 'The Right People',
-      description: 'Hire driven, skilled, stable producers that you can trust. There is no room for anyone else.',
+      description:
+        'Hire driven, skilled, stable producers that you can trust. There is no room for anyone else.',
     },
   ]
 
@@ -78,8 +70,8 @@ const About = memo(() => {
         <div className="text-center mb-16 animate-teleport-in-1">
           <h2 className="text-3xl font-bold text-white sm:text-4xl mb-4">About Me</h2>
           <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-            I'm a driven & ambitious software engineer who loves to help people. Technology transforms the 
-            world for the better, when we aren't using it to destroy ourselves.
+            I'm a driven & ambitious software engineer who loves to help people. Technology
+            transforms the world for the better, when we aren't using it to destroy ourselves.
           </p>
         </div>
 
@@ -89,19 +81,71 @@ const About = memo(() => {
             <h3 className="text-2xl font-bold text-white mb-6">My Journey</h3>
             <div className="prose prose-invert max-w-none">
               <p className="text-gray-300 mb-4">
-                As a tinkerer at heart, I spent most of my childhood taking things apart to see how they worked. 
-                When I got my first computer things were no different; I eventually fried the motherboard by force-overclocking a chip that wasn't designed for it.  
-                I'm always curious and dabbling in new things, so I drifted through several majors in college before finally settling on software engineering. 
+                As a tinkerer at heart, I have built my career on moving quickly & being flexible. I
+                have a natural intuition for understanding people and creating environments where
+                everyone can do what they do best.
               </p>
-              <p className="text-gray-300 mb-4">
-                As a professional, I have built my career on moving quickly & being flexible. 
-                I enjoy the entire development process - from understanding user needs and 
-                designing elegant solutions to implementing robust code and optimizing performance. 
-                There's something magical & addicting about interpreting ideas into working software. 
-              </p>
-              <p className="text-gray-300">
-                When I'm not coding, you can find me spending time with my family, exploring new technologies (mostly via private side projects), dabbling in outdoor hobbies, reading, listening to podcasts, or planning "life".   
-              </p>
+              <p className="text-gray-300 mb-4">Career History:</p>
+              <ul className="list-disc text-gray-300 mb-4 ml-4 space-y-4">
+                <li className="pl-2">
+                  <span className="font-semibold">BitcoinIRA (2024-present)</span>
+                  <ul className="list-disc ml-6 mt-2 space-y-2">
+                    <li>
+                      Currently re-architecting crypto pricing engine in C# with Redis caching for
+                      massive scale and 99.99% uptime.
+                    </li>
+                    <li>
+                      Developed high-volume asynchronous invoice and transaction processing system
+                      using Azure Functions, Service Bus, and Accutech Cheetah.
+                    </li>
+                    <li>
+                      Migrated legacy Salesforce CRM to HubSpot using Azure Functions and Service
+                      Bus, transforming sales operations.
+                    </li>
+                  </ul>
+                </li>
+                <li className="pl-2">
+                  <span className="font-semibold">Choice: Bitcoin in your IRA (2021-2024)</span>
+                  <ul className="list-disc ml-6 mt-2 space-y-2">
+                    <li>
+                      Led team to migrate all data and services from licensed on-prem to cloud and
+                      open source, saving ~70% in infrastructure costs using AWS DMS, Fargate, and
+                      CDK.
+                    </li>
+                    <li>
+                      Key role in architecting cloud-native crypto platform with Lambda/DynamoDB
+                      handling millions of transactions with sub-850ms latency.
+                    </li>
+                    <li>
+                      Learned Flutter and became primary mobile developer for app with 100K+
+                      downloads and 4.8-star rating.
+                    </li>
+                  </ul>
+                </li>
+                <li className="pl-2">
+                  <span className="font-semibold">Syngenta Digital (2017-2021)</span>
+                  <ul className="list-disc ml-6 mt-2 space-y-2">
+                    <li>
+                      Promoted to Tech Lead for rewrite of massive nationwide ETL project. Rapidly
+                      upskilled in Scala/Kafka and delivered within 6 months, processing over $1B in
+                      revenue.
+                    </li>
+                  </ul>
+                </li>
+                <li className="pl-2">
+                  <span className="font-semibold">Side Businesses</span>
+                  <ul className="list-disc ml-6 mt-2 space-y-2">
+                    <li>
+                      Cofounded startup and built children's EyeSpy mobile game in Flutter with
+                      3,000+ downloads.
+                    </li>
+                    <li>
+                      Cofounder of social networking platform for creatives using Go/React/DynamoDB
+                      (stealth mode 👻).
+                    </li>
+                  </ul>
+                </li>
+              </ul>
             </div>
           </div>
 
@@ -133,13 +177,13 @@ const About = memo(() => {
         {/* Values */}
         <div className="animate-teleport-in-4">
           <h3 className="text-2xl font-bold text-white text-center mb-12">What I Value</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
             {values.map(value => {
               const IconComponent = value.icon
               return (
                 <div
                   key={value.title}
-                  className="text-center group hover:bg-gray-800/50 p-6 rounded-xl transition-all duration-300"
+                  className="text-center group hover:bg-gray-800/50 p-4 rounded-xl transition-all duration-300"
                 >
                   <div className="mx-auto h-12 w-12 text-primary-400 mb-4 group-hover:text-accent-400 transition-colors duration-300">
                     <IconComponent />

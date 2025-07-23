@@ -70,8 +70,8 @@ export default {
         },
       },
       transitionDuration: {
-        '600': '600ms',
-        '800': '800ms',
+        600: '600ms',
+        800: '800ms',
       },
     },
   },
