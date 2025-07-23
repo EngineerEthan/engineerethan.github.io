@@ -41,7 +41,7 @@ const ProjectTile = memo<ProjectTileProps>(({ project, isLarge = false, onTileCl
       type="button"
       className={classNames(
         'group relative overflow-hidden rounded-xl bg-gray-800 shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-105 cursor-pointer w-full text-left',
-        isLarge ? 'col-span-2 row-span-2' : 'col-span-1 row-span-1'
+        isLarge ? 'md:col-span-2 md:row-span-2' : 'col-span-1 row-span-1'
       )}
       onClick={handleTileClick}
       aria-label={`Select ${project.title} project`}
@@ -50,7 +50,7 @@ const ProjectTile = memo<ProjectTileProps>(({ project, isLarge = false, onTileCl
       <div
         className={classNames(
           'absolute inset-0 bg-gradient-to-br from-primary-900/20 to-accent-900/20',
-          isLarge ? 'h-96' : 'h-64'
+          isLarge ? 'h-80 md:h-96' : 'h-64'
         )}
       >
         {!imageError ? (
@@ -116,7 +116,7 @@ const ProjectTile = memo<ProjectTileProps>(({ project, isLarge = false, onTileCl
                 aria-label={`View live demo of ${project.title}`}
               >
                 <ArrowTopRightOnSquareIcon className="h-3 w-3" aria-hidden="true" />
-                Live Demo
+                Live
               </button>
             )}
           </div>

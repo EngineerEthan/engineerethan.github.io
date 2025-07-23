@@ -37,17 +37,35 @@ const Contact = memo(() => {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simulate form submission - replace with actual form handling
     try {
-      // This is where you'd integrate with a form service like Netlify Forms, Formspree, etc.
-      await new Promise(resolve => setTimeout(resolve, 1000))
+      const formData = new FormData(e.target as HTMLFormElement)
 
-      setStatus({
-        type: 'success',
-        message: "Thanks for your message! I'll get back to you soon.",
+      formData.append('access_key', '44d10d5a-9ba8-4a52-829f-d4a8df85b950')
+
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData,
       })
-      setFormData({ name: '', email: '', subject: '', message: '' })
-    } catch {
+
+      const data = await response.json()
+
+      if (data.success) {
+        setStatus({
+          type: 'success',
+          message: "Thanks for your message! I'll get back to you soon.",
+        })
+        setFormData({ name: '', email: '', subject: '', message: '' })
+      } else {
+        console.log('Error', data)
+        setStatus({
+          type: 'error',
+          message:
+            data.message ||
+            'Something went wrong. Please try again or reach out directly via email.',
+        })
+      }
+    } catch (error) {
+      console.log('Error', error)
       setStatus({
         type: 'error',
         message: 'Something went wrong. Please try again or reach out directly via email.',
@@ -100,7 +118,7 @@ const Contact = memo(() => {
                   <MapPinIcon className="h-6 w-6 text-primary-400" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-medium text-white">Location</h4>
+                  <h4 className="text-lg font-medium text-white">Location: Kentucky, USA</h4>
                   <p className="text-gray-300">
                     Available for remote work (USA timezones preferred)
                   </p>
