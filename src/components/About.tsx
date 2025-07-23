@@ -126,7 +126,7 @@ const About = memo(() => {
                   <span className="font-semibold">Syngenta Digital (2017-2021)</span>
                   <ul className="list-disc ml-6 mt-2 space-y-2">
                     <li>
-                      Promoted to Tech Lead of off-track massive nationwide ETL project. Rapidly
+                      Promoted to Tech Lead for rewrite of massive nationwide ETL project. Rapidly
                       upskilled in Scala/Kafka and delivered within 6 months, processing over $1B in
                       revenue.
                     </li>
