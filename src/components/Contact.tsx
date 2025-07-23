@@ -101,7 +101,9 @@ const Contact = memo(() => {
                 </div>
                 <div>
                   <h4 className="text-lg font-medium text-white">Location</h4>
-                  <p className="text-gray-300">Available for remote work (USA timezones preferred)</p>
+                  <p className="text-gray-300">
+                    Available for remote work (USA timezones preferred)
+                  </p>
                 </div>
               </div>
             </div>

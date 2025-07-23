@@ -8,8 +8,7 @@
 
 /* Pixelation OUT effect - dissolving current content */
 .pixelation-out-overlay {
-  background: 
-    linear-gradient(90deg, transparent 50%, rgba(17, 24, 39, 0.8) 50%),
+  background: linear-gradient(90deg, transparent 50%, rgba(17, 24, 39, 0.8) 50%),
     linear-gradient(rgba(17, 24, 39, 0.8) 50%, transparent 50%);
   background-size: 4px 4px;
   animation: pixelate-out 600ms ease-in-out forwards;
@@ -46,8 +45,7 @@
 
 /* Pixelation IN effect - materializing new content (true reverse of OUT) */
 .pixelation-in-overlay {
-  background: 
-    linear-gradient(90deg, transparent 50%, rgba(17, 24, 39, 0.8) 50%),
+  background: linear-gradient(90deg, transparent 50%, rgba(17, 24, 39, 0.8) 50%),
     linear-gradient(rgba(17, 24, 39, 0.8) 50%, transparent 50%);
   background-size: 16px 16px;
   animation: pixelate-in 600ms ease-out forwards;

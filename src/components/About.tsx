@@ -1,12 +1,9 @@
 import {
-  CodeBracketIcon,
-  HeartIcon,
-  LightBulbIcon,
   ClockIcon,
-  CubeIcon,
-  CogIcon,
-  UserGroupIcon,
+  CodeBracketIcon,
+  LightBulbIcon,
   RocketLaunchIcon,
+  UserGroupIcon,
 } from '@heroicons/react/24/outline'
 import { memo } from 'react'
 
@@ -23,10 +20,19 @@ interface Value {
 
 const About = memo(() => {
   const skills: SkillGroup[] = [
-    { category: 'Frontend', technologies: ['React', 'Flutter', 'TypeScript', 'Tailwind CSS', 'Angular'] },
+    {
+      category: 'Frontend',
+      technologies: ['React', 'Flutter', 'TypeScript', 'Tailwind CSS', 'Angular'],
+    },
     { category: 'Backend', technologies: ['Node.js', 'C# .NET', 'PostgreSQL', 'DynamoDB', 'Go'] },
-    { category: 'Cloud', technologies: ['AWS Lambda', 'Azure Functions', 'AWS CDK', 'Terraform', 'Docker'] },
-    { category: 'Data & Caching', technologies: ['Kafka', 'Redis', 'Scala', 'AWS DMS', 'Service Bus'] },
+    {
+      category: 'Cloud',
+      technologies: ['AWS Lambda', 'Azure Functions', 'AWS CDK', 'Terraform', 'Docker'],
+    },
+    {
+      category: 'Data & Caching',
+      technologies: ['Kafka', 'Redis', 'Scala', 'AWS DMS', 'Service Bus'],
+    },
   ]
 
   const values: Value[] = [
@@ -53,7 +59,8 @@ const About = memo(() => {
     {
       icon: UserGroupIcon,
       title: 'The Right People',
-      description: 'Hire driven, skilled, stable producers that you can trust. There is no room for anyone else.',
+      description:
+        'Hire driven, skilled, stable producers that you can trust. There is no room for anyone else.',
     },
   ]
 
@@ -63,8 +70,8 @@ const About = memo(() => {
         <div className="text-center mb-16 animate-teleport-in-1">
           <h2 className="text-3xl font-bold text-white sm:text-4xl mb-4">About Me</h2>
           <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-            I'm a driven & ambitious software engineer who loves to help people. Technology transforms the 
-            world for the better, when we aren't using it to destroy ourselves.
+            I'm a driven & ambitious software engineer who loves to help people. Technology
+            transforms the world for the better, when we aren't using it to destroy ourselves.
           </p>
         </div>
 
@@ -74,15 +81,26 @@ const About = memo(() => {
             <h3 className="text-2xl font-bold text-white mb-6">My Journey</h3>
             <div className="prose prose-invert max-w-none">
               <p className="text-gray-300 mb-4">
-                As a tinkerer at heart, I have built my career on moving quickly & being flexible. I have a natural intuition for understanding people and creating environments where everyone can lean into what they do best while growing in areas that matter.
+                As a tinkerer at heart, I have built my career on moving quickly & being flexible. I
+                have a natural intuition for understanding people and creating environments where
+                everyone can do what they do best.
               </p>
               <p className="text-gray-300 mb-4">Career History:</p>
               <ul className="list-disc text-gray-300 mb-4 ml-4 space-y-4">
                 <li className="pl-2">
-                  <span className="font-semibold">Syngenta Digital (2017-2021)</span>
+                  <span className="font-semibold">BitcoinIRA (2024-present)</span>
                   <ul className="list-disc ml-6 mt-2 space-y-2">
                     <li>
-                      Promoted to Tech Lead of off-track massive nationwide ETL project. Rapidly upskilled in Scala/Kafka and delivered within 6 months, processing over $1B in revenue.
+                      Currently re-architecting crypto pricing engine in C# with Redis caching for
+                      massive scale and 99.99% uptime.
+                    </li>
+                    <li>
+                      Developed high-volume asynchronous invoice and transaction processing system
+                      using Azure Functions, Service Bus, and Accutech Cheetah.
+                    </li>
+                    <li>
+                      Migrated legacy Salesforce CRM to HubSpot using Azure Functions and Service
+                      Bus, transforming sales operations.
                     </li>
                   </ul>
                 </li>
@@ -90,24 +108,27 @@ const About = memo(() => {
                   <span className="font-semibold">Choice: Bitcoin in your IRA (2021-2024)</span>
                   <ul className="list-disc ml-6 mt-2 space-y-2">
                     <li>
-                      Led team to migrate all data and services from licensed on-prem to cloud and open source, saving ~70% in infrastructure costs using AWS DMS, Fargate, and CDK.
+                      Led team to migrate all data and services from licensed on-prem to cloud and
+                      open source, saving ~70% in infrastructure costs using AWS DMS, Fargate, and
+                      CDK.
                     </li>
                     <li>
-                      Key role in architecting cloud-native crypto platform with Lambda/DynamoDB handling millions of transactions with sub-850ms latency.
+                      Key role in architecting cloud-native crypto platform with Lambda/DynamoDB
+                      handling millions of transactions with sub-850ms latency.
                     </li>
                     <li>
-                      Learned Flutter and became primary mobile developer for app with 100K+ downloads and 4.8-star rating.
+                      Learned Flutter and became primary mobile developer for app with 100K+
+                      downloads and 4.8-star rating.
                     </li>
                   </ul>
                 </li>
                 <li className="pl-2">
-                  <span className="font-semibold">BitcoinIRA (2024-present)</span>
+                  <span className="font-semibold">Syngenta Digital (2017-2021)</span>
                   <ul className="list-disc ml-6 mt-2 space-y-2">
                     <li>
-                      Re-architecting crypto pricing engine in C# with Redis caching for massive scale and 99.99% uptime.
-                    </li>
-                    <li>
-                      Migrated legacy Salesforce CRM to HubSpot using Azure Functions and Service Bus, transforming sales operations.
+                      Promoted to Tech Lead of off-track massive nationwide ETL project. Rapidly
+                      upskilled in Scala/Kafka and delivered within 6 months, processing over $1B in
+                      revenue.
                     </li>
                   </ul>
                 </li>
@@ -115,10 +136,12 @@ const About = memo(() => {
                   <span className="font-semibold">Side Businesses</span>
                   <ul className="list-disc ml-6 mt-2 space-y-2">
                     <li>
-                      Cofounded startup and built children's EyeSpy mobile game in Flutter with 3,000+ downloads.
+                      Cofounded startup and built children's EyeSpy mobile game in Flutter with
+                      3,000+ downloads.
                     </li>
                     <li>
-                      Cofounder of social networking platform for creatives using Go/React/DynamoDB (stealth mode 👻).
+                      Cofounder of social networking platform for creatives using Go/React/DynamoDB
+                      (stealth mode 👻).
                     </li>
                   </ul>
                 </li>

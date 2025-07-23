@@ -1,6 +1,6 @@
 /**
  * Feature flags configuration
- * 
+ *
  * This module provides a centralized way to manage feature flags in the application.
  * Feature flags can be controlled via environment variables or set directly here.
  */
@@ -15,7 +15,7 @@ export interface FeatureFlags {
  * These can be overridden by environment variables prefixed with VITE_FEATURE_
  */
 const DEFAULT_FLAGS: FeatureFlags = {
-  showProjects: false,
+  showProjects: true,
   showContactButtons: true,
 }
 

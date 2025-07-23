@@ -1,7 +1,7 @@
-import { RocketLaunchIcon } from '@heroicons/react/24/solid'
-import { memo, useEffect } from 'react'
 import { useFeatureFlags } from '@/hooks/useFeatureFlags'
 import { usePageTransition } from '@/hooks/usePageTransition'
+import { RocketLaunchIcon } from '@heroicons/react/24/solid'
+import { memo, useEffect } from 'react'
 import TransitionOverlay from './TransitionOverlay'
 
 interface LayoutProps {
@@ -11,7 +11,7 @@ interface LayoutProps {
 const Layout = memo<LayoutProps>(({ children }) => {
   const { showProjects } = useFeatureFlags()
   const { isTransitioning, transitionStage, navigateToSection } = usePageTransition()
-  
+
   useEffect(() => {
     const handleHashClick = (e: Event) => {
       const target = e.target as HTMLAnchorElement
@@ -27,11 +27,11 @@ const Layout = memo<LayoutProps>(({ children }) => {
     document.addEventListener('click', handleHashClick)
     return () => document.removeEventListener('click', handleHashClick)
   }, [navigateToSection])
-  
+
   return (
     <div className="bg-dots-lighter relative flex min-h-screen flex-col bg-gray-900 bg-center text-white antialiased">
       <TransitionOverlay isTransitioning={isTransitioning} transitionStage={transitionStage} />
-      
+
       <header className="sticky top-0 z-20 bg-gray-900/95 backdrop-blur-sm border-b border-gray-800">
         <nav className="mx-auto max-w-7xl px-6 lg:px-8" aria-label="Top">
           <div className="flex w-full items-center justify-between py-6">
@@ -56,6 +56,12 @@ const Layout = memo<LayoutProps>(({ children }) => {
               >
                 Home
               </a>
+              <a
+                href="#about"
+                className="text-gray-300 hover:text-primary-400 transition-all duration-200 hover:scale-105 cursor-pointer"
+              >
+                About
+              </a>
               {showProjects && (
                 <a
                   href="#projects"
@@ -64,12 +70,6 @@ const Layout = memo<LayoutProps>(({ children }) => {
                   Projects
                 </a>
               )}
-              <a
-                href="#about"
-                className="text-gray-300 hover:text-primary-400 transition-all duration-200 hover:scale-105 cursor-pointer"
-              >
-                About
-              </a>
               <a
                 href="#contact"
                 className="text-gray-300 hover:text-primary-400 transition-all duration-200 hover:scale-105 cursor-pointer"
@@ -86,7 +86,7 @@ const Layout = memo<LayoutProps>(({ children }) => {
       <footer className="relative z-10 border-t border-gray-800 py-6">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center text-sm text-gray-400">
-            <p>&copy; 2025 Ethan. Built with React & Vite. Assisted by Claude.</p>
+            <p>&copy; 2025 Ethan. Built with React & Vite.</p>
           </div>
         </div>
       </footer>
