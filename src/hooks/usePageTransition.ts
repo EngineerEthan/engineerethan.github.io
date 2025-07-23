@@ -23,7 +23,7 @@ export const usePageTransition = () => {
         transitionStage: 'pixelating-out',
       })
 
-      // Stage 1: Pixelate current content away (600ms)
+      // Stage 1: Pixelate current content away (300ms)
       setTimeout(() => {
         setState(prev => ({
           ...prev,
@@ -39,23 +39,23 @@ export const usePageTransition = () => {
           })
         }
 
-        // Stage 2: Brief moment for jump (100ms)
+        // Stage 2: Brief moment for jump (50ms)
         setTimeout(() => {
           setState(prev => ({
             ...prev,
             transitionStage: 'pixelating-in',
           }))
 
-          // Stage 3: Pixelate new content in (600ms)
+          // Stage 3: Pixelate new content in (300ms)
           setTimeout(() => {
             setState({
               isTransitioning: false,
               targetSection: null,
               transitionStage: 'idle',
             })
-          }, 600)
-        }, 100)
-      }, 600)
+          }, 300)
+        }, 50)
+      }, 300)
     },
     [state.isTransitioning]
   )
