@@ -1,7 +1,6 @@
 import type { ContactFormData, StatusMessage } from '@/types'
 import {
   CheckCircleIcon,
-  EnvelopeIcon,
   ExclamationCircleIcon,
   MapPinIcon,
 } from '@heroicons/react/24/outline'
@@ -40,7 +39,7 @@ const Contact = memo(() => {
     try {
       const formData = new FormData(e.target as HTMLFormElement)
 
-      formData.append('access_key', '44d10d5a-9ba8-4a52-829f-d4a8df85b950')
+      formData.append('access_key', import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || '')
 
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
@@ -56,7 +55,7 @@ const Contact = memo(() => {
         })
         setFormData({ name: '', email: '', subject: '', message: '' })
       } else {
-        console.log('Error', data)
+        console.error('Error', data)
         setStatus({
           type: 'error',
           message:
@@ -65,7 +64,7 @@ const Contact = memo(() => {
         })
       }
     } catch (error) {
-      console.log('Error', error)
+      console.error('Error', error)
       setStatus({
         type: 'error',
         message: 'Something went wrong. Please try again or reach out directly via email.',
