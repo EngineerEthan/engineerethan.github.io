@@ -39,7 +39,7 @@ const About = memo(() => {
     {
       icon: ClockIcon,
       title: 'Practical Minimalism',
-      description: `Perfection is the enemy of excellence. "Good" & shipped is better than "great" & behind schedule. Good intentions won't bring back missed opportunities.`,
+      description: `Perfection is the enemy of excellence. "Good" & shipped is better than "great" & behind schedule. Good intentions won't bring back missed opportunities. (YAGNI)`,
     },
     {
       icon: CodeBracketIcon,
@@ -91,15 +91,14 @@ const About = memo(() => {
                   <span className="font-semibold">BitcoinIRA (2024-present)</span>
                   <ul className="list-disc ml-6 mt-2 space-y-2">
                     <li>
-                      Currently re-architecting crypto pricing engine in C# with Redis caching for
-                      massive scale and 99.99% uptime.
+                      Currently re-architecting crypto pricing engine in C# with Redis caching for 99.99% uptime at 10,000+ concurrent users.
                     </li>
                     <li>
-                      Developed high-volume async transaction processing system with Azure Functions and Service Bus, improving stability and reducing latency.
+                      Developed async transaction processing system with Azure Functions and Service Bus, reliably handling thousands of transactions daily.
                     </li>
                     <li>
-                      Migrated legacy Salesforce CRM to HubSpot using Azure Functions and Service
-                      Bus, transforming sales operations.
+                      Migrated legacy Salesforce integration to HubSpot using Azure Functions and Service
+                      Bus, eliminating manual steps to provide marketing with hours of additional time daily.
                     </li>
                   </ul>
                 </li>
@@ -107,7 +106,7 @@ const About = memo(() => {
                   <span className="font-semibold">Choice: Bitcoin in your IRA (2021-2024)</span>
                   <ul className="list-disc ml-6 mt-2 space-y-2">
                     <li>
-                      Led team to migrate all data and services from licensed on-prem to cloud and
+                      Led team to migrate from licensed on-prem to cloud and
                       open source, saving ~70% in infrastructure costs using AWS DMS, Fargate, and
                       CDK.
                     </li>
@@ -125,8 +124,8 @@ const About = memo(() => {
                   <span className="font-semibold">Syngenta Digital (2017-2021)</span>
                   <ul className="list-disc ml-6 mt-2 space-y-2">
                     <li>
-                      Tech Lead for rewrite of massive nationwide ETL project. Rapidly
-                      upskilled in Scala/Kafka and delivered within 6 months, processing over $1B in
+                      Tech Lead for rewrite of ETL project for thousands of industrial growers nationwide. Rapidly
+                      upskilled in Scala/Kafka and delivered within 6 months, processing millions of records and over $1B in
                       revenue.
                     </li>
                   </ul>
