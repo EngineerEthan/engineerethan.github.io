@@ -95,8 +95,7 @@ const About = memo(() => {
                       massive scale and 99.99% uptime.
                     </li>
                     <li>
-                      Developed high-volume asynchronous invoice and transaction processing system
-                      using Azure Functions, Service Bus, and Accutech Cheetah.
+                      Developed high-volume async transaction processing system with Azure Functions and Service Bus, improving stability and reducing latency.
                     </li>
                     <li>
                       Migrated legacy Salesforce CRM to HubSpot using Azure Functions and Service
@@ -126,7 +125,7 @@ const About = memo(() => {
                   <span className="font-semibold">Syngenta Digital (2017-2021)</span>
                   <ul className="list-disc ml-6 mt-2 space-y-2">
                     <li>
-                      Promoted to Tech Lead for rewrite of massive nationwide ETL project. Rapidly
+                      Tech Lead for rewrite of massive nationwide ETL project. Rapidly
                       upskilled in Scala/Kafka and delivered within 6 months, processing over $1B in
                       revenue.
                     </li>

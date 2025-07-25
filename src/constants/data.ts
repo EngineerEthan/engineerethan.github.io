@@ -19,7 +19,7 @@ export const PROJECTS: Project[] = [
     id: 2,
     title: 'BitcoinIRA Platform',
     description:
-      'Re-architecting pricing engine for high scale and 99.99% uptime. Migrated legacy Salesforce CRM integration to HubSpot, transforming sales operations.',
+      'Currently re-architecting pricing engine for high scale and 99.99% uptime. Developed high-volume async transaction processing system and migrated legacy Salesforce CRM integration to HubSpot, transforming business operations.',
     technologies: ['C#', 'Redis', 'Azure Functions', 'Service Bus', 'HubSpot'],
     githubUrl: '',
     liveUrl: 'https://bitcoinira.com/',
@@ -51,7 +51,7 @@ export const PROJECTS: Project[] = [
   {
     id: 5,
     title: 'Curated Social Platform',
-    description: 'Cofounder of social networking platform for creatives.',
+    description: 'Cofounder of social networking platform for creatives. Details are secret for now. 🤫',
     technologies: ['Go', 'React', 'DynamoDB', 'AWS CDK', 'TypeScript'],
     githubUrl: '',
     liveUrl: 'https://dream.curated-app.com/',
