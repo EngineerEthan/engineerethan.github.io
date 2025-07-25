@@ -40,7 +40,7 @@ const ProjectTile = memo<ProjectTileProps>(({ project, isLarge = false, onTileCl
     <button
       type="button"
       className={classNames(
-        'group relative overflow-hidden rounded-xl bg-gray-800 shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-105 cursor-pointer w-full text-left',
+        'group relative overflow-hidden rounded-xl bg-gray-800 shadow-lg transition-all duration-300 hover:shadow-2xl cursor-pointer w-full text-left',
         isLarge ? 'md:col-span-2 md:row-span-2' : 'col-span-1 row-span-1'
       )}
       onClick={handleTileClick}
@@ -107,7 +107,7 @@ const ProjectTile = memo<ProjectTileProps>(({ project, isLarge = false, onTileCl
           </div>
 
           {/* Action Buttons */}
-          <div className="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <div className="flex gap-2 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
             {project.liveUrl && (
               <button
                 type="button"

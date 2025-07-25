@@ -1,5 +1,5 @@
 import { PROJECTS } from '@/constants/data'
-import { memo, useMemo, useState } from 'react'
+import { memo, useMemo, useState, useEffect } from 'react'
 import ProjectTile from './ProjectTile'
 
 const ProjectGrid = memo(() => {
@@ -16,6 +16,19 @@ const ProjectGrid = memo(() => {
   const [selectedOtherProjectId, setSelectedOtherProjectId] = useState<number | null>(
     TODDLER_EYESPY_PROJECT_ID
   )
+  const [hoveredProjectId, setHoveredProjectId] = useState<number | null>(null)
+  const [hoveredOtherProjectId, setHoveredOtherProjectId] = useState<number | null>(null)
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768) // md breakpoint
+    }
+    
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
 
   return (
     <section id="projects" className="relative py-24">
@@ -31,12 +44,21 @@ const ProjectGrid = memo(() => {
         {featuredProjects.length > 0 && (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16 animate-teleport-in-2">
             {featuredProjects.map(project => (
-              <ProjectTile
+              <div
                 key={project.id}
-                project={project}
-                isLarge={selectedProjectId === project.id}
-                onTileClick={() => setSelectedProjectId(project.id)}
-              />
+                onMouseEnter={() => setHoveredProjectId(project.id)}
+                onMouseLeave={() => {
+                  setHoveredProjectId(null)
+                  setSelectedProjectId(project.id) // Remember this as the new selected project
+                }}
+                className="md:contents"
+              >
+                <ProjectTile
+                  project={project}
+                  isLarge={isMobile ? true : (hoveredProjectId ? hoveredProjectId === project.id : selectedProjectId === project.id)}
+                  onTileClick={() => setSelectedProjectId(project.id)}
+                />
+              </div>
             ))}
           </div>
         )}
@@ -52,12 +74,21 @@ const ProjectGrid = memo(() => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {otherProjects.map(project => (
-                <ProjectTile
+                <div
                   key={project.id}
-                  project={project}
-                  isLarge={selectedOtherProjectId === project.id}
-                  onTileClick={() => setSelectedOtherProjectId(project.id)}
-                />
+                  onMouseEnter={() => setHoveredOtherProjectId(project.id)}
+                  onMouseLeave={() => {
+                    setHoveredOtherProjectId(null)
+                    setSelectedOtherProjectId(project.id) // Remember this as the new selected project
+                  }}
+                  className="md:contents"
+                >
+                  <ProjectTile
+                    project={project}
+                    isLarge={isMobile ? true : (hoveredOtherProjectId ? hoveredOtherProjectId === project.id : selectedOtherProjectId === project.id)}
+                    onTileClick={() => setSelectedOtherProjectId(project.id)}
+                  />
+                </div>
               ))}
             </div>
           </div>
