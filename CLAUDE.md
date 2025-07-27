@@ -54,6 +54,29 @@ Based on the Copilot instructions and existing code patterns:
 - **Commit messages** - use Commitizen conventional commit format: `type(scope): description`
 - **String quotes** - use template literals (backticks) for user-facing strings, especially those with apostrophes
 
+## Finishing Workflow
+
+**IMPORTANT**: After completing any task, always run the following commands to polish and verify your work:
+
+1. **Run lint and check commands**:
+   ```bash
+   pnpm run lint        # Check for lint errors
+   pnpm run check       # Run TypeScript check and formatting
+   pnpm run check:fix   # Auto-fix formatting issues
+   ```
+
+2. **Fix any remaining issues**:
+   - Address TypeScript errors
+   - Fix lint violations (prefer for...of over forEach, avoid non-null assertions, etc.)
+   - Ensure proper typing for all mocks and test utilities
+
+3. **Verify tests still pass**:
+   ```bash
+   pnpm run test        # Ensure all tests pass after fixes
+   ```
+
+This process ensures code quality and consistency across the entire codebase.
+
 ## Component Architecture
 
 - **Layout.tsx**: Main application layout with header/footer and navigation
