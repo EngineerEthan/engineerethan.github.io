@@ -8,7 +8,7 @@ export const PROJECTS: Project[] = [
     id: 1,
     title: 'BitcoinIRA Platform',
     description:
-      'Developed async transaction processing system, migrated from Salesforce to HubSpot, and currently re-building pricing engine (99.99% uptime) for 10,000+ concurrent users',
+      'Developed async transaction processing system, migrated from Salesforce to HubSpot, and currently re-building pricing engine (99.99% uptime) for 10,000+ concurrent calls',
     technologies: ['C#', 'Redis', 'Azure Functions', 'Service Bus', 'HubSpot'],
     githubUrl: '',
     liveUrl: 'https://bitcoinira.com/',
