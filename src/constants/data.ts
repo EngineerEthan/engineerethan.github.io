@@ -41,7 +41,7 @@ export const PROJECTS: Project[] = [
     id: 4,
     title: 'Toddler EyeSpy',
     description:
-      'Nobile game with 3,000+ downloads before taking down from app stores. Used royalty-free music with donated artwork. Still have the app on my phone for a demo - just ask!',
+      'Mobile game with 3,000+ downloads before taking down from app stores. Used royalty-free music with donated artwork. Still have the app on my phone for a demo - just ask!',
     technologies: ['Flutter', 'Dart', 'Google Play', 'App Store'],
     githubUrl: '',
     liveUrl: '', // No longer on app store
