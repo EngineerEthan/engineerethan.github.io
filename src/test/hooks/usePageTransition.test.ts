@@ -13,11 +13,6 @@ Object.defineProperty(document, 'getElementById', {
   writable: true,
 })
 
-// Mock setTimeout to control timing in tests
-vi.mock('global', () => ({
-  setTimeout: vi.fn(),
-}))
-
 describe('usePageTransition', () => {
   beforeEach(() => {
     vi.clearAllMocks()
