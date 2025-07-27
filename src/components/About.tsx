@@ -70,8 +70,8 @@ const About = memo(() => {
         <div className="text-center mb-16 animate-teleport-in-1">
           <h2 className="text-3xl font-bold text-white sm:text-4xl mb-4">About Me</h2>
           <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-            I'm a driven & ambitious software engineer who loves to help people. Technology
-            transforms the world for the better, when we aren't using it to destroy ourselves.
+            I love to help people. Technology transforms the world for the better, when we aren't
+            using it to destroy ourselves.
           </p>
         </div>
 
@@ -91,14 +91,17 @@ const About = memo(() => {
                   <span className="font-semibold">BitcoinIRA (2024-present)</span>
                   <ul className="list-disc ml-6 mt-2 space-y-2">
                     <li>
-                      Currently re-architecting crypto pricing engine in C# with Redis caching for 99.99% uptime at 10,000+ concurrent users.
+                      Currently re-architecting crypto pricing engine in C# with Redis caching for
+                      99.99% uptime at 10,000+ concurrent calls.
                     </li>
                     <li>
-                      Developed async transaction processing system with Azure Functions and Service Bus, reliably handling thousands of transactions daily.
+                      Developed async transaction processing system with Azure Functions and Service
+                      Bus, reliably handling thousands of transactions daily.
                     </li>
                     <li>
-                      Migrated legacy Salesforce integration to HubSpot using Azure Functions and Service
-                      Bus, eliminating manual steps to provide marketing with hours of additional time daily.
+                      Migrated legacy Salesforce integration to HubSpot using Azure Functions and
+                      Service Bus, eliminating manual steps to provide marketing with hours of
+                      additional time daily.
                     </li>
                   </ul>
                 </li>
@@ -106,9 +109,8 @@ const About = memo(() => {
                   <span className="font-semibold">Choice: Bitcoin in your IRA (2021-2024)</span>
                   <ul className="list-disc ml-6 mt-2 space-y-2">
                     <li>
-                      Led team to migrate from licensed on-prem to cloud and
-                      open source, saving ~70% in infrastructure costs using AWS DMS, Fargate, and
-                      CDK.
+                      Led team to migrate from licensed on-prem to cloud and open source, saving
+                      ~70% in infrastructure costs using AWS DMS, Fargate, and CDK.
                     </li>
                     <li>
                       Key role in architecting cloud-native crypto platform with Lambda/DynamoDB
@@ -124,9 +126,9 @@ const About = memo(() => {
                   <span className="font-semibold">Syngenta Digital (2017-2021)</span>
                   <ul className="list-disc ml-6 mt-2 space-y-2">
                     <li>
-                      Tech Lead for rewrite of ETL project for thousands of industrial growers nationwide. Rapidly
-                      upskilled in Scala/Kafka and delivered within 6 months, processing millions of records and over $1B in
-                      revenue.
+                      Tech Lead for rewrite of ETL project for thousands of industrial growers
+                      nationwide. Rapidly upskilled in Scala/Kafka and delivered within 6 months,
+                      processing millions of records and over $1B in revenue.
                     </li>
                   </ul>
                 </li>

@@ -8,7 +8,7 @@ export const PROJECTS: Project[] = [
     id: 1,
     title: 'BitcoinIRA Platform',
     description:
-      'Developed async transaction processing system, migrated from Salesforce to HubSpot, and currently re-building pricing engine (99.99% uptime) for 10,000+ concurrent users',
+      'Developed async transaction processing system, migrated from Salesforce to HubSpot, and currently re-building pricing engine (99.99% uptime) for 10,000+ concurrent calls',
     technologies: ['C#', 'Redis', 'Azure Functions', 'Service Bus', 'HubSpot'],
     githubUrl: '',
     liveUrl: 'https://bitcoinira.com/',
@@ -41,7 +41,7 @@ export const PROJECTS: Project[] = [
     id: 4,
     title: 'Toddler EyeSpy',
     description:
-      'Cofounded startup to build mobile game with 3,000+ downloads before taking down from app stores. Used royalty-free music with donated artwork. Still have the app on my phone for a demo - just ask!',
+      'Mobile game with 3,000+ downloads before taking down from app stores. Used royalty-free music with donated artwork. Still have the app on my phone for a demo - just ask!',
     technologies: ['Flutter', 'Dart', 'Google Play', 'App Store'],
     githubUrl: '',
     liveUrl: '', // No longer on app store
@@ -51,7 +51,7 @@ export const PROJECTS: Project[] = [
   {
     id: 5,
     title: 'Curated Social Platform',
-    description: 'Cofounder of social networking platform for creatives. Details are secret for now. 🤫',
+    description: 'Social networking platform for creatives. Details are secret for now. 🤫',
     technologies: ['Go', 'React', 'DynamoDB', 'AWS CDK', 'TypeScript'],
     githubUrl: '',
     liveUrl: 'https://dream.curated-app.com/',
