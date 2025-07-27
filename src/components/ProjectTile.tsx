@@ -37,13 +37,21 @@ const ProjectTile = memo<ProjectTileProps>(({ project, isLarge = false, onTileCl
   const remainingTechCount = Math.max(0, project.technologies.length - maxTechCount)
 
   return (
-    <button
-      type="button"
+    <div
       className={classNames(
         'group relative overflow-hidden rounded-xl bg-gray-800 shadow-lg transition-all duration-300 hover:shadow-2xl cursor-pointer w-full text-left',
         isLarge ? 'md:col-span-2 md:row-span-2' : 'col-span-1 row-span-1'
       )}
       onClick={handleTileClick}
+      // biome-ignore lint/a11y/useSemanticElements: Complex component requires div for styling and hover states
+      role="button"
+      tabIndex={0}
+      onKeyDown={e => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault()
+          handleTileClick()
+        }
+      }}
       aria-label={`Select ${project.title} project`}
     >
       {/* Background Image or Placeholder */}
@@ -122,7 +130,7 @@ const ProjectTile = memo<ProjectTileProps>(({ project, isLarge = false, onTileCl
           </div>
         </div>{' '}
       </div>
-    </button>
+    </div>
   )
 })
 

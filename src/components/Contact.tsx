@@ -1,9 +1,5 @@
 import type { ContactFormData, StatusMessage } from '@/types'
-import {
-  CheckCircleIcon,
-  ExclamationCircleIcon,
-  MapPinIcon,
-} from '@heroicons/react/24/outline'
+import { CheckCircleIcon, ExclamationCircleIcon, MapPinIcon } from '@heroicons/react/24/outline'
 import { type ChangeEvent, type FormEvent, memo, useState } from 'react'
 import { GithubIcon, LinkedinIcon, TwitterIcon } from './icons/SocialIcons'
 

@@ -51,8 +51,7 @@ export const PROJECTS: Project[] = [
   {
     id: 5,
     title: 'Curated Social Platform',
-    description:
-      'Social networking platform for creatives. Details are secret for now. 🤫',
+    description: 'Social networking platform for creatives. Details are secret for now. 🤫',
     technologies: ['Go', 'React', 'DynamoDB', 'AWS CDK', 'TypeScript'],
     githubUrl: '',
     liveUrl: 'https://dream.curated-app.com/',

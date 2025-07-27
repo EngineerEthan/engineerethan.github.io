@@ -1,5 +1,5 @@
 import { PROJECTS } from '@/constants/data'
-import { memo, useMemo, useState, useEffect } from 'react'
+import { memo, useEffect, useMemo, useState } from 'react'
 import ProjectTile from './ProjectTile'
 
 const ProjectGrid = memo(() => {
@@ -24,7 +24,7 @@ const ProjectGrid = memo(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768) // md breakpoint
     }
-    
+
     checkMobile()
     window.addEventListener('resize', checkMobile)
     return () => window.removeEventListener('resize', checkMobile)
@@ -55,7 +55,13 @@ const ProjectGrid = memo(() => {
               >
                 <ProjectTile
                   project={project}
-                  isLarge={isMobile ? true : (hoveredProjectId ? hoveredProjectId === project.id : selectedProjectId === project.id)}
+                  isLarge={
+                    isMobile
+                      ? true
+                      : hoveredProjectId
+                        ? hoveredProjectId === project.id
+                        : selectedProjectId === project.id
+                  }
                   onTileClick={() => setSelectedProjectId(project.id)}
                 />
               </div>
@@ -85,7 +91,13 @@ const ProjectGrid = memo(() => {
                 >
                   <ProjectTile
                     project={project}
-                    isLarge={isMobile ? true : (hoveredOtherProjectId ? hoveredOtherProjectId === project.id : selectedOtherProjectId === project.id)}
+                    isLarge={
+                      isMobile
+                        ? true
+                        : hoveredOtherProjectId
+                          ? hoveredOtherProjectId === project.id
+                          : selectedOtherProjectId === project.id
+                    }
                     onTileClick={() => setSelectedOtherProjectId(project.id)}
                   />
                 </div>
