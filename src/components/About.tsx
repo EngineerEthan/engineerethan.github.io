@@ -91,12 +91,8 @@ const About = memo(() => {
                   <span className="font-semibold">BitcoinIRA (2024-present)</span>
                   <ul className="list-disc ml-6 mt-2 space-y-2">
                     <li>
-                      Currently re-architecting crypto pricing engine in C# with Redis caching for
-                      99.99% uptime at 10,000+ concurrent calls.
-                    </li>
-                    <li>
                       Developed async transaction processing system with Azure Functions and Service
-                      Bus, reliably handling thousands of transactions daily.
+                      Bus, reliably handling millions of dollars in trades and thousands of transactions daily.
                     </li>
                     <li>
                       Migrated legacy Salesforce integration to HubSpot using Azure Functions and
